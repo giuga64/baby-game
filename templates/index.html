@@ -14,8 +14,9 @@
     <div class="content">
         <div class="card">
             <h2>Lettere alfabeto italiano</h2>
-            <p class="text">
-            <a href="{{ url_for('show_animal', index=animali[id]["letter"]) }}">{{ animali[id]["letter"] }}</a></p>
+            {% for animale in animali: %}
+                <a href="{{ url_for('show_animal', index=animale['letter']) }}">  {{ animale["letter"] }}</a>
+            {% endfor %}
         </div>
     </div>
 
